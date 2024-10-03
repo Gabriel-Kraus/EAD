@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queimadas na Amazônia e a Importância da Preservação</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #28a745;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .content {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .content h2 {
+            font-size: 2em;
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        /* Estilizando o carrossel de imagens */
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .carousel img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .carousel-btn.prev {
+            left: 10px;
+        }
+
+        .carousel-btn.next {
+            right: 10px;
+        }
+
+        .carousel img.fade {
+            display: none;
+        }
+
+        .carousel img.active {
+            display: block;
+        }
+
+        footer {
+            background-color: #28a745;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer .nav-boxes {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        footer .nav-box {
+            background-color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer a {
+            color: #28a745;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #fff;
+            background-color: #28a745;
+            padding: 10px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Queimadas na Amazônia e a Importância da Preservação</h1>
+        <p>A preservação da Amazônia é vital para o equilíbrio ecológico global.</p>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <h2>O impacto das queimadas na Amazônia</h2>
+            <p>As queimadas na Amazônia têm um impacto devastador na biodiversidade, contribuindo para a extinção de espécies e acelerando as mudanças climáticas. 
+               A floresta Amazônica, conhecida como o pulmão do mundo, é responsável pela produção de uma grande quantidade de oxigênio que respiramos. 
+               A preservação desse bioma é de extrema importância para a manutenção da vida na Terra.</p>
+        </div>
+
+        
+        <div class="carousel">
+            <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+            <img class="active" src="imagem01.jpg" alt="Queimada na Amazônia">
+            <img class="fade" src="imagem02.jpg" alt="Ação de preservação da floresta">
+            <img class="fade" src="imagem03.jpg" alt="Amazônia vista do espaço">
+            <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+
+        <div class="content">
+            <h2>A importância da preservação</h2>
+            <p>Preservar a Amazônia não é apenas uma questão de manter um território intocado, mas de garantir que ela continue desempenhando seu papel vital na regulação do clima global, na manutenção da biodiversidade e no suporte às comunidades indígenas que dependem dela para viver.</p>
+        </div>
+    </div>
+
+    <!-- Cabeçalho de navegação com links para as páginas 1, 2 e 3 -->
+    <footer>
+        <div class="nav-boxes">
+            <div class="nav-box">
+                <a href="index.html">Página 1</a>
+            </div>
+            <div class="nav-box">
+                <a href="pagina2.html">Página 2</a>
+            </div>
+            <div class="nav-box">
+                <a href="pagina3.html">Página 3</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para controlar o carrossel de imagens -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".carousel img");
+
+        function moveSlide(direction) {
+            slides[currentSlide].classList.remove("active");
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            slides[currentSlide].classList.add("active");
+        }
+    </script>
+
+</body>
+</html>
